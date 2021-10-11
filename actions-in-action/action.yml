@@ -21,13 +21,13 @@ runs:
     - name: show the configuration
       shell: bash
       run: |
-        echo "HI!" > /config/hi.txt
+        echo "HI!" > hi.txt
 
     - name: use another action
       uses: actions/upload-artifact@v2
       with:
-        name: dummy
-        path: /config/hi.txt
+        name: hi
+        path: hi.txt
         retention-days: 2
 
     - name: set some sort of output
