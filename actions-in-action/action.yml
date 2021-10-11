@@ -21,14 +21,14 @@ runs:
     - name: show the configuration
       shell: bash
       run: |
-        cat ./config/hi.txt
-      working-directory: "${{ github.action_path }}"
+        echo "HI!" > /config/hi.txt
 
     - name: use another action
       uses: actions/upload-artifact@v2
       with:
         name: dummy
-        path: ./config/hi.txt
+        path: /config/hi.txt
+        retention-days: 2
 
     - name: set some sort of output
       id: heavy-lifting
